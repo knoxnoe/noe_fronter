@@ -55,7 +55,7 @@ const columns = [
     {
         align: 'center',
         title: '所属楼盘',
-        dataIndex: 'property'
+        dataIndex: 'estate.js'
     },
     {
         align: 'center',

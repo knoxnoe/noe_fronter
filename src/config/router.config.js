@@ -33,8 +33,8 @@ export const asyncRouterMap = [
                 ]
             },
             {
-                path: 'property',
-                name: 'property',
+                path: 'estate.js',
+                name: 'estate.js',
                 component: PageView,
                 meta: { title: '楼盘管理', keepAlive: true, icon: 'slack', permission: ['221'] },
                 redirect: '/property/add',

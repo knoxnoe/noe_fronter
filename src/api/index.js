@@ -9,6 +9,10 @@ const api = {
     // get my info
     UserInfo: '/user/info',
     // property-add
-    oneStep: '/oneStep'
+    oneStep: '/oneStep',
+
+    // estate
+    selectCompany: '/estate/selectCompany',
+    insertEstate: '/estate/insertEstate'
 }
 export default api

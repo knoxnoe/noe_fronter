@@ -14,7 +14,7 @@
                 :value="index"
                 v-for="(item, index) in select"
                 :key="index"
-              >{{ item }}</a-select-option>
+              >{{ item.companyFullName }}</a-select-option>
             </a-select>
           </a-form-model-item>
         </a-col>
@@ -129,8 +129,9 @@
 </template>
 
 <script>
-import { oneStep } from '@/api/login'
-
+// import { oneStep } from '@/api/login'
+import { selectCompany, insertEstate } from '@/api/estate'
+import QS from 'qs'
 export default {
     name: 'Step1',
     data() {
@@ -163,30 +164,45 @@ export default {
         }
     },
     created() {
-        var arr = ['海淀子公司', '海淀子公司', '海淀子公司3', '海淀子公司99']
-        this.select = arr
+        // var arr = ['海淀子公司', '海淀子公司', '海淀子公司3', '海淀子公司99']
+        // this.select = arr
+        selectCompany().then(res => {
+            this.select = res.result
+        }).catch(err => {
+            this.$notification(['error']({
+                message: '错误',
+                description: err.toString(),
+                duration: 1
+            }))
+        })
     },
     methods: {
         nextStep() {
-            oneStep({ a: 9 })
-            // this.$refs.ruleForm.validate(valid => {
-            //     if (valid) {
-            //         alert('submit!')
-            //         const random = Math.random()
-            //         if (random > 0.5) {
-            //             // this.$emit('nextStep')
-            //         } else {
-            //             this.$notification.error({
-            //                 message: 'error',
-            //                 description: '123',
-            //                 duration: 1
-            //             })
-            //         }
-            //     } else {
-            //         console.log('error submit!!')
-            //         return false
-            //     }
-            // })
+            // oneStep({ a: 9 })
+            this.$refs.ruleForm.validate(valid => {
+                if (valid) {
+                    const data = QS.stringify(this.form)
+                    insertEstate(data).then(res => {
+
+                    }).catch(err => {
+
+                    })
+                    alert('submit!')
+                    const random = Math.random()
+                    if (random > 0.5) {
+                        // this.$emit('nextStep')
+                    } else {
+                        this.$notification.error({
+                            message: 'error',
+                            description: '123',
+                            duration: 1
+                        })
+                    }
+                } else {
+                    console.log('error submit!!')
+                    return false
+                }
+            })
         },
         resetForm() {
             this.$refs.ruleForm.resetFields()

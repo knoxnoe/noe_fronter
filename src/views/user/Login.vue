@@ -123,8 +123,8 @@ import TwoStepCaptcha from '@/components/tools/TwoStepCaptcha'
 import { mapActions } from 'vuex'
 import { timeFix } from '@/utils/util'
 import { getSmsCaptcha, get2step } from '@/api/login'
-const QS = require('qs')
-
+// const QS = require('qs')
+import QS from 'qs'
 export default {
     components: {
         TwoStepCaptcha
@@ -198,6 +198,7 @@ export default {
                     console.log(loginParams, 'loginParams')
                     // 设置参数的类型
                     const params = QS.stringify(loginParams)
+                    console.log(params, 'params')
                     Login(params)
                         .then(res => this.loginSuccess(res))
                         .catch(err => this.requestFailed(err))
