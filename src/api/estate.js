@@ -16,11 +16,10 @@ export function selectCompany() {
     })
 }
 
-export function insertEstate(parameter) {
+export function insertEstate(params) {
     return axios({
         url: api.insertEstate,
-        method: 'get',
-        data: parameter
+        method: 'post',
+        data: params
     })
 }
-
