@@ -23,3 +23,19 @@ export function insertEstate(params) {
         data: params
     })
 }
+
+export function selectBuilding(params) {
+    return axios({
+        url: api.selectBuilding,
+        method: 'post',
+        data: params
+    })
+}
+
+export function updateBuilding(params) {
+    return axios({
+        url: api.updateBuilding,
+        method: 'post',
+        data: params
+    })
+}

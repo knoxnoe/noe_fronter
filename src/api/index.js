@@ -1,3 +1,4 @@
+// define api name
 const api = {
     Login: '/auth/login',
     Logout: '/auth/logout',
@@ -13,6 +14,8 @@ const api = {
 
     // estate
     selectCompany: '/estate/selectCompany',
-    insertEstate: '/estate/insertEstate'
+    insertEstate: '/estate/insertEstate',
+    selectBuilding: '/estate/selectBuilding',
+    updateBuilding: '/estate/updateBuilding'
 }
 export default api

@@ -4,8 +4,9 @@
       <div class="top">
         <div class="header">
           <!-- <a href="/"> -->
-          <img src="~@/assets/logo.png" class="logo" alt="logo" />
+          <!-- <img src="@/assets/logo.png" class="logo" alt="logo" /> -->
           <!-- </a> -->
+            <h1 style="color:#fff;font-size:5em">logo</h1>
         </div>
         <div class="desc">Ant Design 是西湖区最具影响力的 Web 设计规范</div>
       </div>
@@ -18,7 +19,7 @@
           <a href="_self">隐私</a>
           <a href="_self">条款</a>
         </div>
-        <div class="copyright">Copyright &copy; 2020 马士兵技术组出品</div>
+        <div class="copyright">Copyright &copy; 2020 noe</div>
       </div>
     </div>
   </div>

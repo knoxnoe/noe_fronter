@@ -195,29 +195,30 @@ export default {
                 if (valid) {
                     const data = QS.stringify(this.form)
                     insertEstate(data).then(res => {
-                        this.$notification.success({
-                            message: 'success',
-                            description: res.result
-                        })
+                        if (res.message === '1') {
+                            this.$notification.success({
+                                message: 'success',
+                                description: res.result
+                            })
+                            this.$store.commit('SET_TITLE', {
+                                buildingNumber: this.form.buildingNumber,
+                                estateCode: this.form.estateCode
+                            })
+                            this.$emit('nextStep')
+                        } else {
+                            this.$notification.error({
+                                message: '房产已登记过',
+                                description: res.result
+                            })
+                        }
                     }).catch(err => {
                         this.$notification.error({
                             message: '插入失败',
                             description: err.result
                         })
                     })
-                    alert('submit!')
-                    const random = Math.random()
-                    if (random > 0.5) {
-                        // this.$emit('nextStep')
-                    } else {
-                        this.$notification.error({
-                            message: 'error',
-                            description: '123',
-                            duration: 1
-                        })
-                    }
                 } else {
-                    console.log('error submit!!')
+                    console.log('输入验证不通过！')
                     return false
                 }
             })

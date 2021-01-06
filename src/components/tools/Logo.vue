@@ -1,7 +1,8 @@
 <template>
   <div class="logo">
-    <img src="~@/assets/logo.png" alt />
-  </div>
+<!--    <img src="~@/assets/logo.png" alt />-->
+      <h1>logo</h1>
+</div>
 </template>
 
 <script>

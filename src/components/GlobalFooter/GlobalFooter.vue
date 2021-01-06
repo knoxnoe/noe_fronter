@@ -6,7 +6,7 @@
     <div class="copyright">
       Copyright
       <a-icon type="copyright" />2020
-      <span>马士兵技术组出品</span>
+      <span>knox noe</span>
     </div>
   </div>
 </template>
